@@ -8,6 +8,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 异步任务调度。
@@ -25,6 +26,9 @@ public class AsyncTaskDispatch {
     private AsyncTaskHandler mAsyncTaskHandler;
 
     private ArrayList<AsyncTaskItem> mAsyncTaskList;
+
+    private AtomicInteger atomicInteger = new AtomicInteger(5);
+
 
     public AsyncTaskDispatch() {
         mAsyncTaskList = new ArrayList<>();
